@@ -24,14 +24,14 @@ st.dataframe(dt)
 
 dz=dt.head(10)
 
-dt1 = data['sepal.length'].sum()
-dt2 = data['sepal.width'].sum()
-dt3 = data['petal.length'].sum()
-dt4 = data['petal.width'].sum()
-dx=[data1,data2,data3,data4]
+dt1 = dt['sepal.length'].sum()
+dt2 = dt['sepal.width'].sum()
+dt3 = dt['petal.length'].sum()
+dt4 = dt['petal.width'].sum()
+dx=[dt1,dt2,dt3,dt4]
 dx2 = pd.DataFrame(dx, index=["d1","d2","d3","d4"])
 
-st.bar_chart(dz)
+st.bar_chart(dx2)
 st.balloons()
 
 st.sidebar.markdown("# วิเคราะห์รายบุคคล ")
