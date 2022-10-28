@@ -27,3 +27,23 @@ if st.button("แสดงการจินตทัศน์ข้อมูล
    st.button("ไม่แสดงข้อมูล")
 else:
     st.write("ไม่แสดงข้อมูล")
+
+    html_8="""
+<div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
+<center><h5>ทำนายข้อมูล</h5></center>
+</div>
+"""
+
+st.markdown(html_8, unsafe_allow_html=True)
+st.markdown("")
+
+pt_len=st.slider("กรุณาเลือกข้อมูล petal.lenght")
+pt_wid=st.slider("กรุณาเลือกข้อมูล petal.width")
+sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
+sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
+
+if st.button("ทำนายผล"):
+    st.markdown("ใส่โมเดล")
+    st.button("ไม่แสดงข้อมูล")
+else:
+    st.write("ไม่แสดงข้อมูล")
