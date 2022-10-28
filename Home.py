@@ -23,6 +23,14 @@ dt=pd.read_csv('./data/iris.csv')
 st.dataframe(dt)
 
 dz=dt.head(10)
+
+dt1 = data['sepal.length'].sum()
+dt2 = data['sepal.width'].sum()
+dt3 = data['petal.length'].sum()
+dt4 = data['petal.width'].sum()
+dx=[data1,data2,data3,data4]
+dx2 = pd.DataFrame(dx, index=["d1","d2","d3","d4"])
+
 st.bar_chart(dz)
 st.balloons()
 
