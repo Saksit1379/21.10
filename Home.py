@@ -5,9 +5,8 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 
-
-st.header("saksit")
-st.subheader("Saelim")
+st.header("Kittitorn")
+st.subheader("Chantana")
 
 html_8="""
 <div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
@@ -19,11 +18,11 @@ st.markdown("")
 dx=pd.read_excel('./data/gen.xlsx')
 st.dataframe(dx)
 
-dt=pd.read_csv('./data/iris.csv')
-st.dataframe(dt)
+dz=pd.read_csv('./data/iris.csv')
+st.dataframe(dz)
 
-dt1=dt.head(10)
-st.bar_chart(dt1)
+dy=dz.head(10)
+st.bar_chart(dy)
 st.balloons()
 
-st.sidebar.markdown("# วิเคราะห์รายบุคคล ")
+st.sidebar.markdown("# วิเคราห์รายบุคคล")
