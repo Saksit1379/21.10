@@ -8,28 +8,30 @@ import pickle
 
 html_8="""
 <div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
-<center><h5> การทำนายข้อมูลดอกไม้ 4</h5></center>
+<center><h5>การทำนายข้อมูลดอกไม้</h5></center>
 </div>
 """
-st.markdown(html_8,unsafe_allow_html=True)
+
+st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
-dt = pd.read_csv('./data/iris.csv')
+dt=pd.read_csv("./data/iris.csv")
 st.write(dt.head(10))
-dt1 = dt['sepal.length'].sum()
-dt2 = dt['sepal.width'].sum()
-dt3 = dt['petal.length'].sum()
-dt4 = dt['petal.width'].sum()
+dt1 = dt['petal.length'].sum()
+dt2 = dt['petal.width'].sum()
+dt3 = dt['sepal.length'].sum()
+dt4 = dt['sepal.width'].sum()
 dx=[dt1,dt2,dt3,dt4]
-dx2 = pd.DataFrame(dx, index=["d1","d2","d3","d4"])
+dx2=pd.DataFrame(dx,index=["d1","d2","d3","d4"])
+
 if st.button("แสดงการจินตทัศน์ข้อมูล"):
-   st.write(dt.head(20))
-   st.line_chart(dx2)
+   st.area_chart(dx2)
    st.button("ไม่แสดงข้อมูล")
 else:
     st.write("ไม่แสดงข้อมูล")
+st.sidebar.markdown("# วิเคราห์รายบุคคล")
 
-    html_8="""
+html_8="""
 <div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
 <center><h5>ทำนายข้อมูล</h5></center>
 </div>
@@ -44,15 +46,13 @@ sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.l
 sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
 
 if st.button("ทำนายผล"):
-    st.markdown("ใส่โมเดล")
-    loaded_model = pickle.load(open('./data/model/trained_model.sav', 'rb'))
+    loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
     input_data =  (pt_len,pt_wid,sp_len,sp_wid)
-    # changing the input_data to numpy array
     input_data_as_numpy_array = np.asarray(input_data)
-    # reshape the array as we are predicting for one instance
     input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
     prediction = loaded_model.predict(input_data_reshaped)
     st.write(prediction)
+
     st.button("ไม่แสดงข้อมูล")
 else:
     st.write("ไม่แสดงข้อมูล")
