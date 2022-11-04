@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
+import pickle
 
 html_8="""
 <div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
@@ -44,6 +45,14 @@ sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.w
 
 if st.button("ทำนายผล"):
     st.markdown("ใส่โมเดล")
+    loaded_model = pickle.load(open('./data/model/trained_model.sav', 'rb'))
+    input_data =  (pt_len,pt_wid,sp_len,sp_wid)
+    # changing the input_data to numpy array
+    input_data_as_numpy_array = np.asarray(input_data)
+    # reshape the array as we are predicting for one instance
+    input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
+    prediction = loaded_model.predict(input_data_reshaped)
+    st.write(prediction)
     st.button("ไม่แสดงข้อมูล")
 else:
     st.write("ไม่แสดงข้อมูล")
