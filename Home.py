@@ -17,7 +17,7 @@ html_8="""
 st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./data/iris.csv")
+dt=pd.read_csv("./data/Smote.csv")
 st.write(dt.head(10))
 dt1 = dt['petal.length'].sum()
 dt2 = dt['petal.width'].sum()
