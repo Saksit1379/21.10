@@ -70,17 +70,9 @@ html_8="""
 st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
-sex=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-age=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-year_class=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-field_of_study=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-objective=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-price=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-store=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-pay=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-period=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-motivation=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-parent_income=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
+sex=st.radio("กรุณาเลือกข้อมูล Sex: 0 หญิง, 1 ชาย",(0, 1))
+age=st.radio("กรุณาเลือกข้อมูล Sex: 0 หญิง, 1 ชาย",(1,2,2,4,5))
+
 
 
 if st.button("ทำนายผล"):
