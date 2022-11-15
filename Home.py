@@ -82,26 +82,6 @@ period=st.number_input("กรุณาเลือกข้อมูล sepal.l
 motivation=st.number_input("กรุณาเลือกข้อมูล sepal.width")
 parent_income=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
 
-sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-
-sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
-sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.lenght")
-sp_wid=st.number_input("กรุณาเลือกข้อมูล sepal.width")
 
 if st.button("ทำนายผล"):
     loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
