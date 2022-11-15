@@ -74,20 +74,3 @@ sex=st.radio("กรุณาเลือกข้อมูล Sex: 0 หญิ�
 age=st.radio("กรุณาเลือกข้อมูล Sex: 0 หญิง, 1 ชาย",(1,2,2,4,5))
 
 
-
-if st.button("ทำนายผล"):
-    loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
-    input_data =  (pt_len,pt_wid,sp_len,sp_wid)
-    input_data_as_numpy_array = np.asarray(input_data)
-    input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
-    prediction = loaded_model.predict(input_data_reshaped)
-    st.write(prediction)
-    if prediction == 'Virginica':
-        st.image('./pic/Virginica.jpg')
-    elif prediction == 'Setosa':
-        st.image('./pic/Setosa.jpg')
-    else:
-        st.image('./pic/Versicolor.jpg')
-    st.button("ไม่แสดงข้อมูล")
-else:
-    st.write("ไม่แสดงข้อมูล")
