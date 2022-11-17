@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 import pickle
-import sklearn
+
 
 st.image('./pic/002.jpg')
 
@@ -61,7 +61,7 @@ motivation=st.radio("กรณีที่ซื้อเงินผ่อน �
 parent_income=st.radio("รายได้ของผู้ปกครอง: 1 ต่ำกว่า 15000 บาท ,2 15001-20000, 3 20001-25000, 4 25001-30000, 5 30000+",(1,2,3,4,5))
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/wave_model.sav', 'rb'))
+   loaded_model = pickle.load(open('./data/W_model.sav', 'rb'))
    input_data =  (sex,age,year_class,field_of_study,objective,price,store,motivation,parent_income)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
