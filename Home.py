@@ -51,7 +51,7 @@ html_8="""
 st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
-sex=st.radio(" Sex: 0 หญิง, 1 ชาย",(0, 1 ))
+sex=st.radio(" Sex: 2 หญิง, 1 ชาย",(2, 1 ))
 age=st.radio("อายุ: ",(1,2,3,))
 year=st.radio("ระดับชั้นปี:",(1,2,3,4))
 field=st.radio("คณะวิชา:",(1,2,3,4,5))
