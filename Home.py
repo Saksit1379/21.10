@@ -51,17 +51,17 @@ st.markdown("")
 
 sex=st.radio(" Sex: 2 หญิง, 1 ชาย",(2, 1 ))
 age=st.radio("อายุ: ",(1,2,3))
-year=st.radio("ระดับชั้นปี:",(1,2,3,4))
-field=st.radio("คณะวิชา:",(1,3,4,))
-obje=st.radio("วัตถุประสงค์ในการเลือกซื้อคอมพิวเตอร์โน้ตบุ๊ค:",(1,2,3,4,5))
+year_class=st.radio("ระดับชั้นปี:",(1,2,3,4))
+field_of_study=st.radio("คณะวิชา:",(1,3,4,))
+objective=st.radio("วัตถุประสงค์ในการเลือกซื้อคอมพิวเตอร์โน้ตบุ๊ค:",(1,2,3,4,5))
 price=st.radio("ยี่ห้อคอมพิวเตอร์โน้ตบุ๊คที่เลือกซื้อ:",(1,2,3,4,5))
 store=st.radio("ราคาเครื่องคอมพิวเตอร์โน้ตบุ๊ค:",(1,2,3,4))
 motivation=st.radio("กรณีที่ซื้อเงินผ่อน ท่านต้องการผ่อนชำระกี่เดือน",(1,2,3,4))
-income=st.radio("รายได้ของผู้ปกครอง: 1 ต่ำกว่า 15000 บาท ,2 15001-20000, 3 20001-25000, 4 25001-30000, 5 30000+",(1,2,3,4,5))
+parent_income=st.radio("รายได้ของผู้ปกครอง: 1 ต่ำกว่า 15000 บาท ,2 15001-20000, 3 20001-25000, 4 25001-30000, 5 30000+",(1,2,3,4,5))
 
 if st.button("ทำนายผล"):
    loaded_model = pickle.load(open('./data/wave_model.sav', 'rb'))
-   input_data =  (sex,age,year,field,obje,price,store,motivation,income)
+   input_data =  (sex,age,year_class,field_of_study,objective,price,store,motivation,parent_income)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
    # reshape the array as we are predicting for one instance
