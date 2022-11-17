@@ -64,7 +64,7 @@ motivation=st.radio("กรณีที่ซื้อเงินผ่อน �
 income=st.radio("รายได้ของผู้ปกครอง: 1 ต่ำกว่า 15000 บาท ,2 15001-20000, 3 20001-25000, 4 25001-30000, 5 30000+",(1,2,2,4,5))
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
+   loaded_model = pickle.load(open('./data/wave_model.sav', 'rb'))
    input_data =  (sex,age,year,field,obje,price,store,pay,period,motivation,income)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
