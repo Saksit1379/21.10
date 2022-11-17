@@ -30,29 +30,10 @@ dt8 = dt['pay'].sum()
 dt9 = dt['2_period'].sum()
 dt10 = dt['motivation'].sum()
 dt11 = dt['parent_income'].sum()
-dt12 = dt['A1'].sum()
-dt13 = dt['A2'].sum()
-dt14 = dt['A3'].sum()
-dt15 = dt['A4'].sum()
-dt16 = dt['A5'].sum()
-dt17 = dt['A6'].sum()
-dt18 = dt['A7'].sum()
-dt19 = dt['A8'].sum()
-dt20 = dt['A9'].sum()
-dt21 = dt['A10'].sum()
-dt22 = dt['A11'].sum()
-dt23 = dt['A12'].sum()
-dt24 = dt['A13'].sum()
-dt25 = dt['A14'].sum()
-dt26 = dt['A15'].sum()
-dt27 = dt['A16'].sum()
-dt28 = dt['A17'].sum()
-dt29 = dt['A18'].sum()
-dt30 = dt['A19'].sum()
-dt31 = dt['A20'].sum()
 
-dx=[dt1,dt2,dt3,dt4,dt5,dt6,dt7,dt8,dt9,dt10,dt11,dt12,dt13,dt14,dt15,dt16,dt17,dt18,dt19,dt20,dt21,dt22,dt23,dt24,dt25,dt26,dt27,dt28,dt29,dt30]
-dx2=pd.DataFrame(dx,index=["d1","d2","d3","d4","dt5","dt6","dt7","dt8","dt9","dt10","dt11","dt12","dt13","dt14","dt15","dt16","dt17","dt18","dt19","dt20","dt21","dt22","dt23","dt24","dt25","dt26","dt27","dt28","dt29","dt30"])
+
+dx=[dt1,dt2,dt3,dt4,dt5,dt6,dt7,dt8,dt9,dt10,dt11]
+dx2=pd.DataFrame(dx,index=["d1","d2","d3","d4","dt5","dt6","dt7","dt8","dt9","dt10","dt11"])
 
 if st.button("แสดงการจินตทัศน์ข้อมูล"):
    st.area_chart(dx2)
@@ -80,5 +61,11 @@ store=st.radio("ราคาเครื่องคอมพิวเตอร�
 pay=st.radio("ท่านเลือกซื้อคอมพิวเตอร์โน้ตบุ๊คจากที่ใด:",(1,2,2,4,5))
 period=st.radio("ท่านเลือกชำระเงินในการซื้อคอมพิวเตอร์โน้ตบุ๊คอย่างไร:",(1,2))
 motivation=st.radio("กรณีที่ซื้อเงินผ่อน ท่านต้องการผ่อนชำระกี่เดือน",(1,2,2,4,5))
-motivation=st.radio("มูลเหตุจูงใจหรือบุคคลใดที่มีอิทธิพลต่อกำรตัดสินใจเลือกซื้อ",(1,2,2,4,5))
 income=st.radio("รายได้ของผู้ปกครอง: 1 ต่ำกว่า 15000 บาท ,2 15001-20000, 3 20001-25000, 4 25001-30000, 5 30000+",(1,2,2,4,5))
+
+if st.button("ทำนายผล"):
+   loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
+   input_data =  (sex,age,year,field,obje,price,store,pay,period,motivation,income)
+   # changing the input_data to numpy array
+   input_data_as_numpy_array = np.asarray(input_data)
+   # reshape the array as we are predicting for one instance
