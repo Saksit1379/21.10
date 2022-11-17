@@ -69,3 +69,22 @@ if st.button("ทำนายผล"):
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
    # reshape the array as we are predicting for one instance
+   input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
+   prediction = loaded_model.predict(input_data_reshaped)
+   st.write(prediction)
+   if prediction == 'Acer':
+        st.image('./pic/AC.png')
+   elif prediction == 'Asus':
+        st.image('./pic/AS.png')
+   elif prediction == 'Dell':
+        st.image('./pic/DE.png')
+   elif prediction == 'HP':
+        st.image('./pic/HP.png')
+   elif prediction == 'Lenovo':
+            st.image('./pic/LE.png')
+   else:
+        st.image('./pic/MC.png')
+   st.button("ไม่แสดงข้อมูล")
+else:
+    st.write("ไม่แสดงข้อมูล")
+
