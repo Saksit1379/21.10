@@ -10,7 +10,7 @@ st.image('./pic/002.jpg')
 
 html_8="""
 <div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
-<center><h5>การทำนายข้อมูลดอกไม้</h5></center>
+<center><h5>ระบบเเนะนำเครื่องคอมพิวเตอร์โน้ตบุ๊ค</h5></center>
 </div>
 """
 
